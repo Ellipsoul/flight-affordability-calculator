@@ -81,6 +81,30 @@ export default function Home() {
             className="w-full px-4 py-2 rounded-lg bg-zinc-900 border border-zinc-700 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </label>
+        <div className="mb-4 text-zinc-400 text-sm text-center">
+          After-tax salary:{" "}
+          <span className="font-semibold text-zinc-200">
+            {isNaN(afterTaxSalary) || !isFinite(afterTaxSalary)
+              ? "--"
+              : afterTaxSalary.toLocaleString(undefined, {
+                style: "currency",
+                currency: "GBP",
+                maximumFractionDigits: 2,
+              })}
+          </span>
+        </div>
+        <div className="mb-6 text-zinc-400 text-sm text-center">
+          After-tax hourly pay:{" "}
+          <span className="font-semibold text-zinc-200">
+            {isNaN(hourlySalary) || !isFinite(hourlySalary)
+              ? "--"
+              : hourlySalary.toLocaleString(undefined, {
+                style: "currency",
+                currency: "GBP",
+                maximumFractionDigits: 2,
+              })}
+          </span>
+        </div>
         <label className="block mb-6">
           <span className="block mb-2 text-zinc-300">Flight Duration</span>
           <div className="flex items-center gap-2">
@@ -107,18 +131,6 @@ export default function Home() {
             <span className="text-zinc-400">m</span>
           </div>
         </label>
-        <div className="mb-4 text-zinc-400 text-sm text-center">
-          After-tax salary:{" "}
-          <span className="font-semibold text-zinc-200">
-            {isNaN(afterTaxSalary) || !isFinite(afterTaxSalary)
-              ? "--"
-              : afterTaxSalary.toLocaleString(undefined, {
-                style: "currency",
-                currency: "GBP",
-                maximumFractionDigits: 2,
-              })}
-          </span>
-        </div>
         <div className="mt-8 text-center">
           <div className="text-zinc-400 mb-2 text-lg">
             You can afford to spend:
