@@ -87,6 +87,7 @@ export default function Home() {
           <input
             type="number"
             min="0"
+            inputMode="numeric"
             value={annualSalary}
             onChange={(e) => setAnnualSalary(e.target.value)}
             placeholder="100000"
@@ -102,6 +103,7 @@ export default function Home() {
             type="number"
             min="1"
             value={hoursPerWeek}
+            inputMode="numeric"
             onChange={(e) => setHoursPerWeek(e.target.value)}
             placeholder="40"
             step={0.5}
@@ -144,6 +146,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <input
               type="number"
+              inputMode="numeric"
               min="0"
               value={hours}
               onChange={(e) => setHours(e.target.value)}
@@ -154,6 +157,7 @@ export default function Home() {
             <span className="text-zinc-400 mr-3">hours</span>
             <input
               type="number"
+              inputMode="numeric"
               min="0"
               max="59"
               value={minutes}
